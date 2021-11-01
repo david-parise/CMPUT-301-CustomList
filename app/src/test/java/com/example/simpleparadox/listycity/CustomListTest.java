@@ -28,4 +28,13 @@ public class CustomListTest {
         list.addCity(city);
         assertEquals(true, list.hasCity(city));
     }
+
+    @Test
+    public void testDelete() {
+        City city = new City("Toronto", "ON");
+        list.addCity(city);
+        assertEquals(1, list.getCount());
+        list.delete(city);
+        assertEquals(0, list.getCount());
+    }
 }
